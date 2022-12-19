@@ -1,4 +1,5 @@
 <?php
+
 class Environment
 {
     public function init()

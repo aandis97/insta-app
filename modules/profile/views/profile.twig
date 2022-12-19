@@ -18,11 +18,15 @@ Home
           class="img-thumbnail rounded-circle">
       </div>
       <div class="col-md-8">
-        <h4 class="fw-light">@admin</h4>
-        <p class="lead text-muted">admin</p>
+        <h4 class="fw-light">@{{ session.user.username ?? '-' }}</h4>
+        <p class="lead text-muted">{{ session.user.name ?? '-' }}</p>
         <p>0 Post</p>
         <button onclick="upload()" style="background-color:transparent;border:none;color:blue"><i
             class="fas fa-plus-circle fa-2x"></i></button>
+      </div>
+      
+      <div class="col-md-2">
+          <a href="{{ base_url ('/auth/logout') }}" class="btn btn-info">Logout</a>
       </div>
     </div>
     <hr>

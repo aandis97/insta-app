@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -17,4 +17,18 @@ $hook['pre_system'][] = array(
     'function' => 'init',
     'filename' => 'Environment.php',
     'filepath' => 'hooks'
+);
+
+$hook['pre_controller'][] = array(
+    'class' => 'Authenticate',
+    'function' => 'init',
+    'filename' => 'Authenticate.php',
+    'filepath' => 'hooks'
+);
+
+$hook['display_override'][] = array(
+    'class' => 'Develbar',
+    'function' => 'debug',
+    'filename' => 'Develbar.php',
+    'filepath' => 'third_party/DevelBar/hooks'
 );
