@@ -1,0 +1,44 @@
+<template id="home_page_post_template_item">
+<div class="post-container">
+    <div class="user-box clearfix">
+      <div class="image">
+        <img class="rounded-circle"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+          alt="Generic placeholder image" width="35" height="35">
+      </div>
+      <div class="username">
+        <h6>@__username__</h6>
+      </div>
+    </div>
+    <img class="card-img-top" alt="Image __username__" style="height: 500px; width: 100%; display: block;"
+      src="{{ base_url('/img/posts/') }}__image__" data-holder-rendered="true">
+    <div class="" style="margin-top:10px; font-size: 17px">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <button style="background-color:transparent;border:none;" onclick="like(1)"><i
+              class="far fa-heart"></i></button>
+              <small>Liked by __total_likes__ people</small>
+        </div>
+        <small class="text-muted">__created_at__</small>
+        
+      </div>
+      <p class="card-text mt-3 px-2">__description__</p>
+      <div class="comment-container">
+        <small class="text-muted">Komentar</small>
+        __comment_list__
+      </div>
+      <hr>
+    </div>
+  </div>
+</template>
+
+<template id="post_comment_template">
+    <div class="row">
+        <div class="col">
+        <img src="__user_profile_image__" alt="Profile Picture" width="25px"
+            class="img-thumbnail rounded-circle">
+        <small><b>__username__</b></small>
+        <small>__comment__</small>
+        </div>
+    </div>
+</template>
