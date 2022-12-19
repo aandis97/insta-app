@@ -1,8 +1,8 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class PostModel extends CI_Model
-{
-	const TABLE_NAME = "posts";
+class PostModel extends MY_Model
+{	
+	public $table = 'posts';
 
 	public function __construct()
 	{
@@ -14,7 +14,7 @@ class PostModel extends CI_Model
 	 *
 	 * @return array
 	 */
-	public function all(): array
+	public function all(array $conditions = []): ?array
 	{
 		$this->db->select([
 			'posts.id', 
@@ -26,6 +26,6 @@ class PostModel extends CI_Model
             'users.username as user_username'
 		])->join('users', 'users.id = posts.author_id');
 
-		return $this->db->get(self::TABLE_NAME)->result();
+		return $this->db->get($this->table)->result();
 	}
 }
