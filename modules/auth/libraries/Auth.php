@@ -52,6 +52,25 @@ class Auth
         }
     }
 
+     /**
+     * register
+     *
+     * @param  string $email
+     * @param  string $password
+     * @return bool
+     */
+    public function register(array $data): bool
+    {
+        try {
+            $this->authModel->insert($data);
+
+            return TRUE;
+        } catch (\Throwable $th) {
+            //throw $th;
+            return FALSE;
+        }
+    }
+
     /**
      * logout
      *

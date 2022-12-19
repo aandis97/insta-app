@@ -29,4 +29,15 @@ class AuthModel extends CI_Model
             throw $th;
         }
     }
+
+    /**
+	 * Insert Data
+	 *
+	 * @param  array $data
+	 * @return void
+	 */
+	public function insert(array $data): void
+	{
+		$this->db->insert(self::TABLE_NAME, $data);
+	}
 }

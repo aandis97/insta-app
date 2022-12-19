@@ -15,29 +15,19 @@ $config = [
     ],
     'register' => [
         [
-            'field' => 'first_name',
-            'label' => 'first_name',
+            'field' => 'name',
+            'label' => 'name',
             'rules' => 'trim|required'
         ],
         [
-            'field' => 'last_name',
-            'label' => 'last_name',
+            'field' => 'username',
+            'label' => 'username',
             'rules' => 'trim|required'
         ],
         [
             'field' => 'email',
             'label' => 'email',
-            'rules' => 'trim|required|valid_email|is_unique[users.email]'
-        ],
-        [
-            'field' => 'phone',
-            'label' => 'phone',
-            'rules' => 'trim'
-        ],
-        [
-            'field' => 'company',
-            'label' => 'company',
-            'rules' => 'trim'
+            'rules' => 'trim|required|valid_email'
         ],
         [
             'field' => 'password',
