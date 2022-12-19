@@ -1,0 +1,72 @@
+{% extends 'layouts/insta-app.twig' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block body %}
+<div class="container posts-container">
+  <div class="post-container">
+    <div class="user-box clearfix">
+      <div class="image">
+        <img class="rounded-circle"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+          alt="Generic placeholder image" width="35" height="35">
+      </div>
+      <div class="username">
+        <h6>@username</h6>
+      </div>
+    </div>
+    <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail"
+      alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;"
+      src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22208%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20208%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1852600e1ec%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A11pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1852600e1ec%22%3E%3Crect%20width%3D%22208%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2266.9453125%22%20y%3D%22117.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+      data-holder-rendered="true">
+      
+    <div class="">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <button style="background-color:transparent;border:none;" onclick="like(1)"><i
+              class="far fa-heart"></i></button>
+        </div>
+        <small class="text-muted">2021-06-16 22:54:42</small>
+      </div>
+      <div class="px-2">
+        <small>Liked by 3 people</small>
+      </div>
+      <p class="card-text mt-3 px-2">Text Here. judul</p>
+      <div class="viewkomen1">
+        <small class="text-muted">Komentar</small>
+        <div class="row">
+          <div class="col">
+            <img src="http://localhost:8001/images/profile/default.png" alt="Profile Picture" width="25px"
+              class="img-thumbnail rounded-circle">
+            <small><b>admin</b></small>
+            <small>coba</small>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <form action="" method="POST" class="formkomen">
+        <input type="hidden" value="1" id="id1" name="id">
+        <div class="row">
+          <div class="col-11">
+            <textarea style="border: none; outline:none" cols="107" rows="1" placeholder="Add a comment..."
+              id="komentar1" name="komentar"></textarea>
+            <div class="invalid-feedback errorKomentar1"></div>
+          </div>
+          <div class="col-1">
+            <button type="submit" style="background-color:transparent;border:none;"><small style="color: blue;">Post</small></button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+
+  
+</div>
+{% endblock %}

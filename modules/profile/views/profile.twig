@@ -1,0 +1,44 @@
+{% extends 'layouts/insta-app.twig' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block body %}
+<main>
+
+  <section class="container" style="background: white">
+    <div class="row" style="padding:18px 0px">
+      <div class="col-md-2">
+        <img src="http://localhost:8001/images/profile/default.png" alt="Profile Picture" width="120px"
+          class="img-thumbnail rounded-circle">
+      </div>
+      <div class="col-md-8">
+        <h4 class="fw-light">@admin</h4>
+        <p class="lead text-muted">admin</p>
+        <p>0 Post</p>
+        <button onclick="upload()" style="background-color:transparent;border:none;color:blue"><i
+            class="fas fa-plus-circle fa-2x"></i></button>
+      </div>
+    </div>
+    <hr>
+    
+      <div class="row" style="padding:18px 0px">
+          <div class="col-md-4">
+              <button style="background-color:transparent;border:none;"><img class="img-thumbnail"></button>
+          </div>
+          <div class="col-md-4">
+              <button style="background-color:transparent;border:none;"><img class="img-thumbnail"></button>
+          </div>
+          <div class="col-md-4">
+              <button style="background-color:transparent;border:none;"><img class="img-thumbnail"></button>
+          </div>
+    </div>
+  </section>
+
+</main>
+{% endblock %}

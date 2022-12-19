@@ -1,26 +1,16 @@
-<header class="navbar navbar-expand-md navbar-light d-none d-lg-flex d-print-none">
-    <div class="container-xl">
-        <div class="navbar-nav flex-row order-md-last">
-            {% include "layouts/partials/dropdown.twig" %}
-        </div>
-        <h1 class="navbar-brand navbar-brand-autodark">
-            INSTA-APP
-        </h1>
-        <div class="collapse navbar-collapse" style="margin-left:20px">
-            <div>
-                <div class="input-icon">
-                    <span class="input-icon-addon">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewbox="0 0 24 24"
-                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <circle cx="10" cy="10" r="7"></circle>
-                            <line x1="21" y1="21" x2="15" y2="15"></line>
-                        </svg>
-                    </span>
-                    <input type="text" class="form-control" placeholder="Search…" aria-label="Search in website">
-                </div>
-            </div>
-        </div>
+<header>
+  <div class="navbar navbar-dark bg-primary">
+    <div class="container d-flex justify-content-between">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+        <strong>InstaApp</strong>
+      </a>
+        <nav class="my-2 my-md-0 mr-md-3">
+            <a class="p-2 text-white" href="home"><i class="fa-solid fa-house"></i></a>
+            <a class="p-2 text-white" href="upload"><i class="fa-regular fa-square-plus"></i></a>
+            <a class="p-2 text-white" href="notification"><i class="fa-solid fa-heart"></i></a>
+            <a class="p-2 text-white" href="profile"><i class="fa-solid fa-user"></i></a>
+        </nav>
     </div>
+  </div>
 </header>
