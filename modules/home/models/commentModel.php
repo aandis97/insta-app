@@ -1,8 +1,8 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class PostModel extends CI_Model
+class CommentModel extends CI_Model
 {
-	const TABLE_NAME = "posts";
+	const TABLE_NAME = "comments";
 
 	public function __construct()
 	{
@@ -14,17 +14,16 @@ class PostModel extends CI_Model
 	 *
 	 * @return array
 	 */
-	public function all(): array
+	public function getCommentsByPostId($postId, $start = 0, $limit = 5): array
 	{
 		$this->db->select([
-			'posts.id', 
-            'posts.image', 
-            'posts.description', 
-            'posts.total_likes', 
-            'posts.created_at', 
+			'comments.id', 
+            'comments.comment', 
             'users.id as user_id',
             'users.username as user_username'
-		])->join('users', 'users.id = posts.author_id');
+		])->join('users', 'users.id = comments.user_id')
+		->where('post_id', $postId)
+		->limit($limit, $start);
 
 		return $this->db->get(self::TABLE_NAME)->result();
 	}

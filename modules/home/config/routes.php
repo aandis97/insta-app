@@ -1,3 +1,4 @@
 <?php
+defined('BASEPATH') or exit('No direct script access allowed');
 
-$route['module_name'] = 'welcome';
+$route['api/posts']['GET'] = 'Home/getPostsJson';
