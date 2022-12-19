@@ -25,8 +25,8 @@ class Twig
 	 * @see http://twig.sensiolabs.org/doc/advanced.html#automatic-escaping
 	 */
 	private $functions_safe = [
-		'form_open', 'form_close', 'form_error', 'form_hidden', 'set_value',
-		'set_radio', 'set_select', 'set_checkbox',
+		'form_open', 'form_close', 'form_error', 'form_hidden', 'form_input', 'form_checkbox',
+		'set_radio', 'set_select', 'set_checkbox', 'set_value'
 	];
 
 	/**
@@ -135,6 +135,8 @@ class Twig
 	public function display($view, $params = [])
 	{
 		$CI = &get_instance();
+		$this->addGlobal("session", $CI->session);
+
 		$CI->output->set_output($this->render($view, $params));
 	}
 
