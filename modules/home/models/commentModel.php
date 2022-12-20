@@ -1,8 +1,8 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class CommentModel extends CI_Model
+class CommentModel extends MY_Model
 {
-	const TABLE_NAME = "comments";
+	public $table = 'comments';
 
 	public function __construct()
 	{
@@ -25,6 +25,6 @@ class CommentModel extends CI_Model
 		->where('post_id', $postId)
 		->limit($limit, $start);
 
-		return $this->db->get(self::TABLE_NAME)->result();
+		return $this->db->get($this->table)->result();
 	}
 }

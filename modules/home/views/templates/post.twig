@@ -20,14 +20,22 @@
               <small>Liked by __total_likes__ people</small>
         </div>
         <small class="text-muted">__created_at__</small>
-        
       </div>
       <p class="card-text mt-3 px-2">__description__</p>
-      <div class="comment-container">
-        <small class="text-muted">Komentar</small>
+      <div class="comment-container-__post_id__">
+        <small class="text-muted">comment</small>
         __comment_list__
       </div>
       <hr>
+      <div class="row">
+          <div class="col-md-10">
+              <textarea style="border: none;outline:none; with:100%" cols="75" class="comment-input-__post_id__"  rows="1" placeholder="Write a comment.." name="comment"></textarea>
+              <div class="invalid-feedback error-comment-__post_id__"></div>
+          </div>
+          <div class="col-2">
+              <button style="background-color:transparent;border:none;" class="comment-button-__post_id__" onclick="doComment(__post_id__)"><small style="color: blue;">Post</small></button>
+          </div>
+      </div>
     </div>
   </div>
 </template>
@@ -35,7 +43,8 @@
 <template id="post_comment_template">
     <div class="row">
         <div class="col">
-        <img src="__user_profile_image__" alt="Profile Picture" width="25px"
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+          alt="Generic placeholder image" alt="Profile Picture" width="25px"
             class="img-thumbnail rounded-circle">
         <small><b>__username__</b></small>
         <small>__comment__</small>

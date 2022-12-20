@@ -9,6 +9,7 @@
 
     <link href="{{ base_url }}/css/bootstrap.css" rel="stylesheet" />
     <link href="{{ base_url }}/css/custom.css" rel="stylesheet" />
+	<link rel="stylesheet" href="{{base_url ('/vendor/pnotify/pnotify.custom.css')}}"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -33,6 +34,8 @@
     </script>
     <script src="{{ base_url ('/vendor/jquery/jquery-3.6.0.min.js')}}"></script>
     <script src="{{ base_url ('/js/bootstrap.bundle.js') }}"></script>
+	<script type="text/javascript" src="{{ base_url('js/vendor/moment/moment.js') }}"></script>
+	<script src="{{base_url ('assets/vendor/pnotify/pnotify.custom.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" integrity="sha512-CryKbMe7sjSCDPl18jtJI5DR5jtkUWxPXWaLCst6QjH8wxDexfRJic2WRmRXmstr2Y8SxDDWuBO6CQC6IE4KTA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     {{ block("scripts") }}
 </body>

@@ -67,4 +67,29 @@ class Home extends MY_Controller {
 			], 400);
 		}
 	}
+
+	public function doComment($postId)
+	{
+		try {
+			$data = [
+				'comment' => $this->input->get('comment'),
+				'user_id' => $this->session->userdata('user')['id'],
+				'post_id' => $postId
+			];
+
+			$this->commentModel->insert($data);
+			
+			$data['username'] =$this->session->userdata('user')['username'];
+			$this->jsonResponse([
+				'status' => 'success',
+				'message' => 'Data successfuly updated',
+				'data' => $data
+			], 200);
+		} catch (\Throwable $th) {
+			$this->jsonResponse([
+				'status' => 'error',
+				'message' => $th->getMessage()
+			], 400);
+		}
+	}
 }

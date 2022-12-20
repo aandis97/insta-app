@@ -77,3 +77,37 @@ function like(e) {
         // TO DO if Errir
     });
 }
+
+
+function doComment(post_id) {
+    let comment = $(".comment-input-"+post_id).val();
+    loading('comment', post_id, true);
+    $.ajax({
+        headers: { 
+            'Content-Type' : 'application/json',
+        },
+        type: "GET",
+        url: `${baseURL}home/doComment/${post_id}`,
+        data: {
+            comment: comment,
+        },
+        dataType: 'JSON',
+    }).done(function (response) {
+        $(".comment-input-"+post_id).val('');
+        loading('comment', post_id, false);
+
+        
+        let comment_item = $("#post_comment_template").clone()[0].innerHTML;
+        comment_item = comment_item.replace(/__username__/g, response.data.username); 
+        comment_item = comment_item.replace(/__comment__/g, comment); 
+        $(".comment-container-"+post_id).append(comment_item);
+    }).fail(function (jqXHR, textStatus, errorThrown) {
+        let res = jqXHR.responseJSON;
+        // TO DO if Errir
+    });
+}
+
+function loading(prefix, id, is_loading = false) {
+    $(`.${prefix}-input-${id}`).attr('disabled', is_loading);
+    $(`.${prefix}-button-${id}`).attr('disabled', is_loading);
+}
