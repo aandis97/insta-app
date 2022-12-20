@@ -25,16 +25,23 @@ class Profile extends MY_Controller {
 				throw new Exception(current($errors));
 			}
 
-			$imageFile = $this->input->getFile('image');
+			$config['upload_path']          = './img/posts/';
+			$config['allowed_types']        = 'gif|jpg|png';
+			$config['max_size']             = 1000;
+			
+			$this->load->library('upload', $config);
+			if ( ! $this->upload->do_upload('image'))
+			{
+				$error = array('error' => $this->upload->display_errors());
+				throw new Exception(current($error));
+			}
 
 			$payload = [
-				'image'       => $imageFile->getName(),
+				'image'       => $this->upload->data()['file_name'],
 				'description' => $this->input->post("description"),
 				'author_id'   => $this->session->userdata('user')['id'],
 				'created_at'  => date('Y-m-d H:i:s')
 			];
-
-			$imageFile->move('img/posts');
 
 			$this->postModel->insert($payload);
 			

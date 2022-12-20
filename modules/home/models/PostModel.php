@@ -24,7 +24,8 @@ class PostModel extends MY_Model
             'posts.created_at', 
             'users.id as user_id',
             'users.username as user_username'
-		])->join('users', 'users.id = posts.author_id');
+		])->join('users', 'users.id = posts.author_id')
+		->where($conditions);
 
 		return $this->db->get($this->table)->result();
 	}

@@ -10,6 +10,7 @@ Home
 
 {% block body %}
 
+{% include "modals/detail-post.twig" %}
 {% include "modals/form-upload.twig" %}
 <main>
   <section class="container" style="background: white">
@@ -22,7 +23,7 @@ Home
       <div class="col-md-8">
         <h4 class="fw-light">@{{ session.user.username ?? '-' }}</h4>
         <p class="lead text-muted">{{ session.user.name ?? '-' }}</p>
-        <p>0 Post</p>
+        <p><span id="total-post">0</span> Post</p>
         <button style="background-color:transparent;border:none;color:blue" data-toggle="modal" data-target="#addNewPost">
           <i class="fas fa-plus"></i> Add New Post</button>
       </div>
@@ -33,22 +34,15 @@ Home
     </div>
     <hr>
     
-      <div class="row" style="padding:18px 0px">
-          <div class="col-md-4">
-              <button style="background-color:transparent;border:none;"><img class="img-thumbnail"></button>
-          </div>
-          <div class="col-md-4">
-              <button style="background-color:transparent;border:none;"><img class="img-thumbnail"></button>
-          </div>
-          <div class="col-md-4">
-              <button style="background-color:transparent;border:none;"><img class="img-thumbnail"></button>
-          </div>
+    <div class="row posts-container" style="padding:18px 0px">
     </div>
   </section>
 </main>
 {% endblock %}
 
 {% block scripts %}
-
+  <script>
+    const username = '{{ session.user.username }}';
+  </script>
 	<script src="{{ base_url ('/js/modules/profile/upload-post.js')}}"></script>
 {% endblock %}

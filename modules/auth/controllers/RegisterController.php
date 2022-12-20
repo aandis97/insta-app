@@ -85,6 +85,7 @@ class RegisterController extends MY_Controller
 				throw new Exception(current($errors));
 			}
 
+            $data['password'] = password_hash($data['password'], PASSWORD_BCRYPT);
             unset($data['password_confirm']);
 			$this->auth->register($data);
             

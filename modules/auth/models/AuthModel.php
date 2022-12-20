@@ -19,7 +19,7 @@ class AuthModel extends CI_Model
             if (!$user) {
                 throw new Exception("Email is not registered yet");
             }
-
+            
             if (!password_verify($password, $user->password)) {
                 throw new Exception("Password did not match");
             }

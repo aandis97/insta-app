@@ -19,7 +19,8 @@ class Home extends MY_Controller {
 
 	public function getPostsJson() 
 	{
-		$posts = $this->postModel->all();
+		$username = $this->input->get('username');
+		$posts = $this->postModel->all(isset($username) ? ['username' => $username] : []);
 		$userId = $this->session->userdata('user')['id'];
 
 		foreach($posts as $post) {
