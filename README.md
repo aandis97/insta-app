@@ -18,6 +18,9 @@ codeigniter/
 │           └── system/
 ├── composer.json
 
+```
+
+
 ## Application
 
 To create MVC stack (controller, model, view) you can use create:app.
